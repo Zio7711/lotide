@@ -1,4 +1,4 @@
-const eqArrays = function(array1, array2) {
+const eqArrays = function (array1, array2) {
   if (array2.length !== array1.length) {
     return false;
   }
@@ -10,7 +10,7 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
-const assertArraysEqual = function(array3, array4) {
+const assertArraysEqual = function (array3, array4) {
   if (eqArrays(array3, array4)) {
     console.log('These two arrays are equal');
   } else {
@@ -19,19 +19,24 @@ const assertArraysEqual = function(array3, array4) {
   return;
 };
 
-const without = function(array5, array6) {
-  for (let i = 0; i < array6.length; i++) {
-    for (let j = 0; j < array5.length; j++) {
-      if (array5[j] === array6[i]) {
-        array5.splice(j,1);
-      }
-    }
-  }
-  console.log(array5);
-  return array5;
-};
+/* const without = function(array, itemsToFilter) {
+  return array.filter(function(value) {
+    return !itemsToFilter.includes(value);
+  });
+}; */
 
-const words = ["hello", "world", "lighthouse",'tom', 'lighthouse'];
-without(words, ["lighthouse",'tom']); // no need to capture return value for this test case
+const without = function (array5, array6) {
+  let result = array5
+  for (let i = 0; i < array6.length; i++) {
+    result = result.filter(function (value) {
+      return value !== array6[i]
+    }) 
+  }; return result
+}
+
+
+
+const words = ["hello", "world", "lighthouse"];
+console.log(without(words, ["lighthouse"])); // no need to capture return value for this test case
 // Make sure the original array was not altered by the without function
 assertArraysEqual(words, ["hello", "world", "lighthouse"]);
