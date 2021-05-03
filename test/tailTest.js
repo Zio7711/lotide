@@ -3,6 +3,14 @@ const tail = require('../tail.js');
 const assert = require('chai').assert;
 
 describe('#tail testing', () => {
+  it("original array ['Yo Yo', 'Lighthouse', 'Labs']", () => {
+    const words = ["Yo Yo", "Lighthouse", "Labs"];
+    let result = tail(words); 
+    assert.deepEqual(result, ['Lighthouse', 'Labs']); 
+  });
+});
+
+/* describe('#tail testing', () => {
   it("original array ['Yo Yo', 'Lighthouse', 'Labs'], length should be 2", () => {
     const words = ["Yo Yo", "Lighthouse", "Labs"];
     let result = tail(words); 
@@ -20,7 +28,7 @@ describe('#tail testing', () => {
     let result = tail(words); 
     assert.equal(result[1], "Labs");
   });
-});
+}); */
 
 
 // const words = ["Yo Yo", "Lighthouse", "Labs"];
