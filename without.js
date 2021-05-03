@@ -34,6 +34,19 @@ const without = function (array5, array6) {
   }; return result
 }
 
+// using splice function by cloning a new array of source
+/* const without = function (source, itemsToRemoved) {
+  let sourceCopy = [...source];
+  for (let i = 0; i < itemsToRemoved.length; i ++) {
+    for (let j = 0; j < sourceCopy.length; j++) {
+      if (sourceCopy[j] === itemsToRemoved[i]) {
+        sourceCopy.splice([j],1);
+      }    
+    }
+  }
+  console.log(source);
+  return sourceCopy;
+} */
 
 
 const words = ["hello", "world", "lighthouse"];
