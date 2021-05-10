@@ -1,7 +1,9 @@
 let args = process.argv[2];
-/* args = args.replace(/a/gi, 4);
-args = args.replace(/e/gi, 3);
-args = args.replace(/o/gi, 0);
-args = args.replace(/l/gi, 1); */
-args = args.replace(/a/gi, 4).replace(/e/gi, 3).replace(/o/gi, 0).replace(/l/gi, 1)
-console.log(args)
+
+const replaceA = str => str.replace(/a/gi, 4);
+const replaceE = str => str.replace(/e/gi, 3);
+const replaceO = str => str.replace(/o/gi, 0);
+const replaceL = str => str.replace(/l/gi, 1);
+
+console.log(replaceO(replaceL(replaceE(replaceA(args)))))
+
