@@ -9,14 +9,11 @@ const eqArrays = (arr1, arr2) => {
         return false;
       }
     } else if (arr1[index] !== arr2[index]) {
-      return false
+      return false;
     }
   }
   return true;
 };
-
-
-
 
 console.log(eqArrays([[2, 3], [4]], [[2, 3], [4]]));
 console.log(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]));
